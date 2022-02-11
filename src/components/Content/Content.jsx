@@ -1,7 +1,16 @@
 import React from "react";
+import Main from "../Main/Main";
+import Sidebar from "../Sidebar/Sidebar";
 
 const Content = () => {
-  return <div style={{ flex: 3, background: "yellow" }}>Content</div>;
+  return (
+    <div className="flex flex-row">
+      <div className="flex w-screen">
+        <Sidebar></Sidebar>
+        <Main></Main>
+      </div>
+    </div>
+  );
 };
 
 export default Content;

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sidebar = () => {
-  return <div style={{ flex: 1, background: "blue" }}>Sidebar</div>;
+  return <div className="h-screen flex-1 bg-orange-400">Sidebar</div>;
 };
 
 export default Sidebar;
