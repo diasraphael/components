@@ -3,12 +3,13 @@ import "../App.css";
 import CircleIcon from "@mui/icons-material/Circle";
 
 interface DropdownProps {
-  // dropdownOptions: any;
+  options: any;
 }
 
 const Dropdown = (props: DropdownProps) => {
-  //const { dropdownOptions } = props;
+  const { options } = props;
   const [toggle, setToggle] = useState(false);
+  console.log(options);
   return (
     <div
       className={`dropdown ${toggle ? "active" : ""}`}
@@ -19,41 +20,15 @@ const Dropdown = (props: DropdownProps) => {
       <div className="label">Hunderase</div>
       <input type="text" placeholder="Velg hunderase" readOnly></input>
       <div className="option">
-        <div className="horizontal">
-          <CircleIcon htmlColor="red"></CircleIcon>
-          <div className="">
-            <div>Affenpinscher</div>
-            <div>Stubborn, Curious, Playful, Adventurous, Active, Fun-...</div>
+        {options.map((option: any) => (
+          <div className="horizontal">
+            <CircleIcon htmlColor="red"></CircleIcon>
+            <div className="">
+              <div>{option.name}</div>
+              <div>{option.temperament}</div>
+            </div>
           </div>
-        </div>
-        <div className="horizontal">
-          <CircleIcon htmlColor="yellow"></CircleIcon>
-          <div>
-            <div>Afghan Hound</div>
-            <div>Aloof, Clownish, Dignified, Independent, Happy</div>
-          </div>
-        </div>
-        <div className="horizontal">
-          <CircleIcon htmlColor="blue"></CircleIcon>
-          <div>
-            <div>African Hunting Dog</div>
-            <div>Wild, Hardworking, Dutiful</div>
-          </div>
-        </div>
-        <div className="horizontal">
-          <CircleIcon htmlColor="black"></CircleIcon>
-          <div>
-            <div>Affenpinscher</div>
-            <div>Stubborn, Curious, Playful, Adventurous, Active, Fun-...</div>
-          </div>
-        </div>
-        <div className="horizontal">
-          <CircleIcon htmlColor="green"></CircleIcon>
-          <div>
-            <div>Affenpinscher</div>
-            <div>Stubborn, Curious, Playful, Adventurous, Active, Fun-...</div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
