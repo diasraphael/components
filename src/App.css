@@ -16,11 +16,12 @@
   border: 2px solid #333;
   right: 20px;
   top: 32px;
-  border-top: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
   transform: rotate(-45deg);
   transition: 0.5s;
   pointer-events: none;
+  z-index: 50;
 }
 .dropdown.active::before {
   top: 39px;
@@ -39,6 +40,10 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   padding: 12px 20px;
 }
+.dropdown input:focus {
+  background: #b7faac;
+  color: #fff;
+}
 
 .dropdown .option {
   position: absolute;
@@ -49,7 +54,7 @@
   overflow: hidden;
   filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.1));
   display: none;
-  max-height: 500px;
+  max-height: 210px;
   overflow-y: auto;
 }
 .dropdown.active .option {
